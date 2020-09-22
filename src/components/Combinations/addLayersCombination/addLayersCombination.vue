@@ -1,0 +1,68 @@
+<template>
+  <div class="modal" v-if="addLayerShow">
+    <div  class="addLayer-panel">
+      <div class="sm-panel-header">
+        <div style="width:10px;"></div>
+        <span :class="{titleColor:webServiceShow}" class="title-txt" @click="choose(0)">公共数据服务</span>
+        <span :class="{titleColor:customServiceShow}" class="title-txt" @click="choose(1)">自定义服务</span>
+        <span :class="{titleColor:localFileShow}" class="title-txt" @click="choose(2)">本地数据</span>
+        <span class="closeBtn" @click="toggleVisibility">&times;</span>
+      </div>
+      <!-- 调用子组件 -->
+      <add-web-service></add-web-service>
+      <add-custom-service></add-custom-service>
+      <add-local-file></add-local-file>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "addLayers",
+  data() {
+    return {
+      sharedState: store.state,
+    };
+  },
+  computed: {
+    webServiceShow: function () {
+      return this.sharedState.addLayer[0];
+    },
+    customServiceShow: function () {
+      return this.sharedState.addLayer[1];
+    },
+    localFileShow: function () {
+      return this.sharedState.addLayer[2];
+    },
+    addLayerShow: function () {
+      return this.sharedState.toolBar[1];
+    },
+  },
+  methods: {
+    toggleVisibility() {
+      //控制组件界面显隐
+      store.setToolBarAction(1);
+    },
+    choose(i) {
+      switch (i) {
+        case 0:
+          store.setAddLayerAction([1, 0, 0]);
+          break;
+        case 1:
+          store.setAddLayerAction([0, 1, 0]);
+          break;
+        case 2:
+          store.setAddLayerAction([0, 0, 1]);
+          break;
+        default:
+          store.setAddLayerAction([1, 0, 0]);
+      }
+    },
+  },
+
+};
+</script>
+
+<style lang="scss" scoped>
+@import "./addLayersCombination.scss";
+</style>

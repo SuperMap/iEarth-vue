@@ -1,0 +1,47 @@
+.sm-panel {
+    position: absolute;
+    z-index: 99;
+    right: 100px;
+    top: 50px;
+    display: inline-block;
+    max-width: 340px;
+    cursor: pointer;
+}
+
+.sm-input-long,
+.sm-select,
+.sm-colorpicker {
+    width: 55%;
+}
+
+.min-solider {
+    float: right;
+    width: 85%;
+}
+
+.flexbox {
+    display: flex;
+    align-items: baseline;
+    // justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.LayerOperation .label-container {
+    margin-left: 10px;
+}
+
+
+
+.minbox:hover {
+    border: 1px solid rgb(58, 150, 78);
+}
+
+.polygon-symbol-font-selected {
+    border: 1px solid rgb(58, 150, 78);
+}
+
+#Thematicmap .sm-input {
+    padding: 0;
+    margin: 0;
+    width: 75%;
+}

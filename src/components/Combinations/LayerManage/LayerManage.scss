@@ -1,0 +1,22 @@
+.layerBox{
+    position: absolute;
+    top: 50px;
+    left: 5px;
+    z-index: 1000;
+    background-color: rgba(38, 38, 38, .75);
+    display: inline-block;
+    width: 280px;
+    max-height: 500px;
+    max-width: 300px;
+    overflow-y: scroll;
+    scrollbar-width: none; /* firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+}
+.ivu-select-dropdown {
+    min-width: 100px; 
+    background-color: rgb(68, 49, 49);
+  }
+
+  .layerBox::-webkit-scrollbar {
+    display: none; /* Chrome Safari */
+  }
